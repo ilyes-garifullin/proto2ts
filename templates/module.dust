@@ -1,18 +1,21 @@
 declare module {package} {
 	interface ProtoBufModel {
 		toArrayBuffer(): ArrayBuffer;
-		//toBuffer(): NodeBuffer;
-		//encode(): ByteBuffer;
 		toBase64(): string;
 		toString(): string;
 	}
 
 	export interface ProtoBufBuilder {
-		{#definitions}{name}: {type};
+		{#definitions}
+		{name}: {type};
 		{/definitions}
 	}
 }
+
 {#messages}
-{>interface:./}{/messages}{#enums}
+{>interface:./}
+{/messages}
+
+{#enums}
 {>enum:./}
 {/enums}
