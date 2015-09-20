@@ -67,11 +67,6 @@ function generateNames(model, prefix, name) {
     if (typeof name === "undefined") { name = ""; }
     model.fullPackageName = prefix + (name != "." ? name : "");
 
-    // Copies the settings (I'm lazy)
-    model.properties = argv.properties;
-    model.camelCaseGetSet = argv.camelCaseGetSet;
-    model.underscoreGetSet = argv.underscoreGetSet;
-
     var newDefinitions = {};
 
     // Generate names for messages
