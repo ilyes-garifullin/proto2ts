@@ -105,7 +105,7 @@ loadDustTemplate("interface");
 loadDustTemplate("enum");
 loadDustTemplate("builder");
 
-module.exports = function(probobufJsonString) {
+module.exports = function(probobufJsonString, callback) {
     var model = JSON.parse(probobufJsonString);
 
     // If a packagename isn't present, use a default package name
@@ -121,6 +121,6 @@ module.exports = function(probobufJsonString) {
         if (err) {
             throw err
         } 
-        return out
+        callback(out) 
     });
 }
