@@ -1,5 +1,8 @@
-Proto2TypeScript
+proto2ts
 ================
+
+Proto2TypeScript repository fork with the purpose of supporting the usage of this module in according with task runner tools such as Gulp
+or Grunt
 
 This tool generate TypeScript definitions for your Protocol Buffers models, when you use the excellent [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js/) library.
 
