@@ -20,7 +20,7 @@ var protobufJsonString = '{ ... }'
 
 // Generate TypeScript type definitions
 var protoJson2ts = require('protoJson2ts')
-var tsDefinitionsString = protoJson2ts(protobufJsonString, function(ts){
+protoJson2ts(protobufJsonString, function(ts){
   // Save generated TypeScript type definitions
 })
 
