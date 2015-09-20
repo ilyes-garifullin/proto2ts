@@ -1,11 +1,3 @@
-#!/usr/bin/env node
-
-/// <reference path="./definitions/node.d.ts" />
-/// <reference path="./definitions/dustjs-linkedin.d.ts" />
-var argv = require('optimist').usage('Convert a ProtoBuf.js JSON description in TypeScript definitions.\nUsage: $0').demand('f').alias('f', 'file').describe('f', 'The JSON file').boolean('c').alias('c', 'camelCaseGetSet').describe('c', 'Generate getter and setters in camel case notation').default('c', true).boolean('u').alias('u', 'underscoreGetSet').describe('u', 'Generate getter and setters in underscore notation').default('u', false).boolean('p').alias('p', 'properties').describe('p', 'Generate properties').default('p', true).argv;
-
-// Import in typescript and commondjs style
-//var ProtoBuf = require("protobufjs");
 var DustJS = require("dustjs-linkedin");
 var fs = require("fs");
 
@@ -118,24 +110,22 @@ loadDustTemplate("interface");
 loadDustTemplate("enum");
 loadDustTemplate("builder");
 
-// Load the json file
-var model = JSON.parse(fs.readFileSync(argv.file).toString());
+module.exports = function(probobufJsonString) {
+    var model = JSON.parse(probobufJsonString);
 
-// If a packagename isn't present, use a default package name
-if (!model.package) {
-    model.package = "Proto2TypeScript";
-}
-
-// Generates the names of the model
-generateNames(model, model.package);
-
-// Render the model
-DustJS.render("module", model, function (err, out) {
-    if (err != null) {
-        console.error(err);
-        process.exit(1);
-    } else {
-        console.log(out);
+    // If a packagename isn't present, use a default package name
+    if (!model.package) {
+        model.package = "proto2ts";
     }
-});
-//# sourceMappingURL=command.js.map
+
+    // Generates the names of the model
+    generateNames(model, model.package);
+
+    // Render the model
+    DustJS.render("module", model, function (err, out) {
+        if (err) {
+            throw err
+        } 
+        return out
+    });
+}
