@@ -1,5 +1,5 @@
 {
-  "name": "proto2ts",
+  "name": "protoJson2ts",
   "version": "1.0.0",
   "description": "Generate TypeScript definitions from a Protocol Buffers model",
   "main": "index.js",
