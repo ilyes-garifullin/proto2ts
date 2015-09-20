@@ -11,14 +11,14 @@ This tool generate TypeScript definitions for your Protocol Buffers models, when
 // Install
 npm install proto2ts -save-dev
 
-// Get protobuf Json declaration 
+// Get protobuf Json definitions 
 var protobufJsonString = '{ ... }'
 
-// Generate TypeScript type declarations
+// Generate TypeScript type definitions
 var proto2ts = require('proto2ts')
-var tsDeclarationsString = proto2ts(protobufJsonString)
+var tsDefinitionsString = proto2ts(protobufJsonString)
 
-// Save generated TypeScript type declarations
+// Save generated TypeScript type definitions
 ...
 
 ```
