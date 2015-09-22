@@ -121,6 +121,6 @@ module.exports = function(probobufJsonString, callback) {
         if (err) {
             throw err
         } 
-        callback(out) 
+        callback(out, model) 
     });
 }
