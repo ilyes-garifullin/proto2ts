@@ -1,5 +1,5 @@
 declare module {package} {
-	interface ProtoBufModel {
+	export interface ProtoBufModel {
 		toArrayBuffer(): ArrayBuffer;
 		toBase64(): string;
 		toString(): string;
