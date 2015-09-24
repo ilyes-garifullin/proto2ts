@@ -1,4 +1,4 @@
-declare module {fullPackageName} {
+module {fullPackageName} {
 
 	export interface {name} extends ProtoBufModel {
 		//properties
