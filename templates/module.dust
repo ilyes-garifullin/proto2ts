@@ -1,12 +1,12 @@
 import protobuf = require("protobufjs");
 
-export interface ProtoBufModel extends protobuf.ProtoBuf {
+export interface ProtoPackage {
 	toArrayBuffer(): ArrayBuffer;
 	toBase64(): string;
 	toString(): string;
 }
 
-export interface ProtoBufBuilder {
+export interface ProtoPackageBuilder extends protobuf.ProtoBuf {
 	{#definitions}
 	{name}: {type};
 	{/definitions}
