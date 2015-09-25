@@ -1,4 +1,4 @@
-export interface {name} extends ProtoBufModel {
+export interface {name} extends ProtoPackage {
 	//properties
 	{#fields}
 	{name}{rule|optionalFieldDeclaration}: {type|convertType}{rule|repeatedType};
