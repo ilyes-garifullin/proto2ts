@@ -4,7 +4,7 @@ export interface ProtoPackage extends protobuf.Message {
 	toArrayBuffer(): ArrayBuffer;
 	toBase64(): string;
 	toString(): string;
-	$type: protobuf.Reflect.Message;
+	$type: protobuf.ReflectMessage;
 }
 
 export interface ProtoPackageBuilder extends protobuf.ProtoBuf {
