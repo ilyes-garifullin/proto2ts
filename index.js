@@ -108,11 +108,6 @@ loadDustTemplate("builder");
 module.exports = function(probobufJsonString, callback) {
     var model = JSON.parse(probobufJsonString);
 
-    // If a packagename isn't present, use a default package name
-    if (!model.package) {
-        model.package = "proto2ts";
-    }
-
     // Generates the names of the model
     generateNames(model, model.package);
 
