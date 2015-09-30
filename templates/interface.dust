@@ -1,21 +1,7 @@
 export interface {name} extends ProtoPackage {
-	//properties
 	{#fields}
 	{name}{rule|optionalFieldDeclaration}: {type|convertType}{rule|repeatedType};
 	{/fields}
-
-	//camelCaseGetSet
-	{#fields}
-	get{name|camelCase|firstLetterInUpperCase}() : {type|convertType}{rule|repeatedType};
-	set{name|camelCase|firstLetterInUpperCase}({name|camelCase|firstLetterInLowerCase} : {type|convertType}{rule|repeatedType}): void;
-	{/fields}
-
-	//underscoreGetSet
-	{#fields}
-	get_{name}() : {type|convertType}{rule|repeatedType};
-	set_{name}({name|firstLetterInLowerCase} : {type|convertType}{rule|repeatedType}): void;
-	{/fields}
-	
 }
 
 {>builder:./}	
