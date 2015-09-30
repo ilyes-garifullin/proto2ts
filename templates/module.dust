@@ -1,6 +1,6 @@
 import protobuf = require("protobufjs");
 
-export interface ProtoPackage {
+export interface ProtoPackage extends protobuf.Message {
 	toArrayBuffer(): ArrayBuffer;
 	toBase64(): string;
 	toString(): string;
