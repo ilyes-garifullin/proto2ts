@@ -107,6 +107,7 @@ loadDustTemplate("builder");
 
 module.exports = function(probobufJsonString, callback) {
     var model = JSON.parse(probobufJsonString);
+    model.jsonString = probobufJsonString;
 
     // Generates the names of the model
     generateNames(model, model.package);
