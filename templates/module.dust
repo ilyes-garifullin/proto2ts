@@ -14,7 +14,7 @@ export interface ProtoPackageBuilder extends protobuf.ProtoBuf {
 }
 
 export class Proto {
-	private static builder: ProtoPackageBuilder = (<ProtoPackageBuilder>protobuf.loadJson(decodeURIComponent("{jsonString}")).build());
+	static builder: ProtoPackageBuilder = (<ProtoPackageBuilder>protobuf.loadJson(decodeURIComponent("{jsonString}")).build());
 	
 	{#messages}
 	static {name} : {name}Builder = Proto.builder.{name};
