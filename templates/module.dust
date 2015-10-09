@@ -7,14 +7,14 @@ export interface ProtoPackage extends protobuf.Message {
 	$type: protobuf.ReflectMessage;
 }
 
-export interface ProtoPackageBuilder extends protobuf.ProtoBuf {
+export interface ProtoPackagesBuilder extends protobuf.ProtoBuf {
 	{#definitions}
 	{name}: {type};
 	{/definitions}
 }
 
 export class Proto {
-	static builder: ProtoPackageBuilder = (<ProtoPackageBuilder>protobuf.loadJson(decodeURIComponent("{jsonString}")).build());
+	static builder: ProtoPackagesBuilder = (<ProtoPackagesBuilder>protobuf.loadJson(decodeURIComponent("{jsonString}")).build());
 	
 	{#messages}
 	static {name} : {name}Builder = Proto.builder.{name};
