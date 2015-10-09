@@ -1,7 +1,8 @@
-export interface {name}Builder {
+export interface {name}Builder extends ProtoPackageBuilder {
 	new(): {name};
 	decode(buffer: ArrayBuffer) : {name};
 	decode64(buffer: string) : {name};
+	$type: protobuf.ReflectMessage;
 	{#definitions}
 	{name}: {type};
 	{/definitions}
