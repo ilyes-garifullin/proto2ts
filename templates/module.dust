@@ -7,6 +7,10 @@ export interface ProtoPackage extends protobuf.Message {
 	$type: protobuf.ReflectMessage;
 }
 
+export interface ProtoPackageBuilder {
+	$type: protobuf.ReflectMessage;
+}
+
 export interface ProtoPackagesBuilder extends protobuf.ProtoBuf {
 	{#definitions}
 	{name}: {type};
